@@ -1,18 +1,22 @@
-public class Book extends  GetInfo {
-    private Author author;
-    public Book(String nameOfBook, int year, Author author) {
-        super(nameOfBook, year);
-        this.author = author;
+public class Book {
+    private String nameOfBook;
+    private int year;
 
+    public Book(int year, String nameOfBook, Author author) {
+        this.year = year;
+        this.nameOfBook = nameOfBook;
     }
 
+    public int getYear() {
+        return this.year;
+    }
 
-    @Override
+    public String getNameOfBook() {
+        return this.nameOfBook;
+    }
+
     public void setYear(int year) {
-        int years = super.getYear();
-        if (year > 2000) {
-            System.out.println("Книга свежая, 21 века");
-        } else System.out.println("Издание старенькое" );
-        super.setYear(year);
+        System.out.println("Год выпуска: " + year);
+        year = this.year;
     }
 }

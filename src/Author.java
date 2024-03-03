@@ -1,12 +1,20 @@
-public class Author extends  GetInfo {
-    public Author(String firstName, String secondName) {
-        super(firstName, secondName);
+import javax.xml.namespace.QName;
+import java.security.PublicKey;
+
+public class Author {
+    private String name;
+    private String secondName;
+
+    public Author(String name, String secondName) {
+        this.name = name;
+        this.secondName = secondName;
     }
 
-    public Author (String [] twoAuthors) {
-        super(twoAuthors);
+    public String getSecondName() {
+        return this.secondName;
     }
 
-
-
+    public String getName() {
+        return this.name;
+    }
 }
