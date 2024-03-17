@@ -1,4 +1,60 @@
+import java.util.Objects;
+
 public class Main {
+
+    public static float allSalary(Employee[] employees) {
+        float allSalary = 0;
+        for (int i = 0; i < employees.length; i++) {
+            allSalary += employees[i].getSalary();
+        }
+        return allSalary;
+    }
+
+    public static float averageSalary(Employee[] employees) {
+        float average = Main.allSalary(employees) / employees.length;
+        return average;
+    }
+
+    public static float minSalary(Employee[] employees) {
+        float min = employees[0].getSalary();
+        for (int i = 0; i < employees.length; i++) {
+            if (min > employees[i].getSalary()) {
+                min = employees[i].getSalary();
+            }
+        }
+        return min;
+    }
+
+    public static float maxSalary(Employee[] employees) {
+        float maxSalary = employees[0].getSalary();
+        for (int i = 0; i < employees.length; i++) {
+            if (maxSalary < employees[i].getSalary()) {
+                maxSalary = employees[i].getSalary();
+            }
+        }
+        return maxSalary;
+    }
+
+    public static String toString(Employee employee) {
+        return "Name is: " + employee.getName() + ". Second name is: " + employee.getSecondName() + ". Salary is: " + employee.getSalary() + ". Departament is: " + employee.getDepartament() + ". Id: " + employee.getId();
+    }
+
+    public static void printName(Employee[] employees) {
+        for (int i = 0; i < employees.length; i++) {
+            System.out.println("Name is: " + employees[i].getName() + ". Second name is: " + employees[i].getSecondName());
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     public static void main(String[] args) {
         Employee employee[] = new Employee[10];
         employee[0] = new Employee("Sergey", "Babushkin", 45000,1);
@@ -11,12 +67,7 @@ public class Main {
         employee[7] = new Employee("Ivan", "Komov", 999999.99f,1);
         employee[8] = new Employee("Ted", "Borgomi", 34000,4);
         employee[9] = new Employee("John", "Alekseev", 48500,5);
-        Employee.printList(employee);
-        System.out.println("all cost is: " + Employee.allSalary(employee));
-        System.out.println("Max salary is: " + Employee.maxSalary(employee));
-        System.out.println("minimal salary is: " + Employee.minSalary(employee));
-        System.out.println("average salary is: " + Employee.averageSalary(employee));
-        System.out.println();
-        Employee.printName(employee);
+
+
     }
 }
