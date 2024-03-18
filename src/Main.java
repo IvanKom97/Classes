@@ -35,9 +35,6 @@ public class Main {
         return maxSalary;
     }
 
-    public static String toString(Employee employee) {
-        return "Name is: " + employee.getName() + ". Second name is: " + employee.getSecondName() + ". Salary is: " + employee.getSalary() + ". Departament is: " + employee.getDepartament() + ". Id: " + employee.getId();
-    }
 
     public static void printName(Employee[] employees) {
         for (int i = 0; i < employees.length; i++) {
@@ -45,15 +42,7 @@ public class Main {
         }
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 
     public static void main(String[] args) {
         Employee employee[] = new Employee[10];
@@ -67,7 +56,6 @@ public class Main {
         employee[7] = new Employee("Ivan", "Komov", 999999.99f,1);
         employee[8] = new Employee("Ted", "Borgomi", 34000,4);
         employee[9] = new Employee("John", "Alekseev", 48500,5);
-
-
+        System.out.println(employee[2].toString());
     }
 }

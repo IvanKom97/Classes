@@ -40,4 +40,20 @@ public class Employee {
     public int getDepartament() {
         return this.departament;
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Employee employee = (Employee) object;
+        return Float.compare(salary, employee.salary) == 0 && id == employee.id && departament == employee.departament && Objects.equals(name, employee.name) && Objects.equals(secondName, employee.secondName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(salary, id, name, departament, secondName);
+    }
+    public String toString() {
+        return "Name is: " + this.name + ". Second name is: " + this.secondName + ". Salary is: " + this.salary + ". Departament is: " + this.departament + ". Id is: " + this.id;
+    }
 }
