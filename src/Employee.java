@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Employee {
-
+    private static int one = 1;
     private static int chet = 1;
     private float salary;
     private int id;
@@ -55,5 +55,9 @@ public class Employee {
     }
     public String toString() {
         return "Name is: " + this.name + ". Second name is: " + this.secondName + ". Salary is: " + this.salary + ". Departament is: " + this.departament + ". Id is: " + this.id;
+    }
+
+    public int getOne() {
+        return this.one;
     }
 }
